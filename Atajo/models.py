@@ -1,8 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
 from jsonfield import JSONField
-#from django.contrib.gis.db import models
-# Create your models here.
 
 
 TIPO_IMAGEN = [
@@ -40,7 +38,7 @@ class Transporte(models.Model):
 
 class Ruta(models.Model):
     fecha_hora = models.DateTimeField()
-    itinerario = JSONField()  # todo: comprobar
+    itinerario = JSONField()
     transporte = models.ForeignKey('Transporte', on_delete=models.SET_NULL, related_name='Ruta', null=True)
 
     def __str__(self):
@@ -72,7 +70,7 @@ class Parcela(models.Model):
     provincia = models.CharField(max_length=30, null=True, blank=True)
     municipio = models.CharField(max_length=30, null=True, blank=True)
     consejo_popular = models.CharField(max_length=30, null=True, blank=True)
-    longitud = models.CharField(max_length=20)  # PointField()
+    longitud = models.CharField(max_length=20)
     latitud = models.CharField(max_length=20)
     ancho = models.FloatField()
     largo = models.FloatField()

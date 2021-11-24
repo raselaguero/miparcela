@@ -12,7 +12,7 @@ class ImagenSerializer(serializers.ModelSerializer):
         extra_kwargs = {'cultivo': {'required': False}, 'paquete_semillas': {'required': True}}
 
 
-class CultivoSerializer(serializers.ModelSerializer):  # todo: OK
+class CultivoSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Cultivo
@@ -22,7 +22,7 @@ class CultivoSerializer(serializers.ModelSerializer):  # todo: OK
         extra_kwargs = {'orden_entrega': {'required': False}}
 
 
-class OrdenEntregaSerializer(serializers.ModelSerializer):  # todo: OK
+class OrdenEntregaSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = OrdenEntrega
@@ -31,7 +31,7 @@ class OrdenEntregaSerializer(serializers.ModelSerializer):  # todo: OK
         extra_kwargs = {'trasporte': {'required': False}, 'ruta_asig': {'required': False}}
 
 
-class UserSerializer(serializers.ModelSerializer): # todo: OK
+class UserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
@@ -40,7 +40,7 @@ class UserSerializer(serializers.ModelSerializer): # todo: OK
         extra_kwargs = {'password': {'write_only': True}}
 
 
-class ObreroSerializer(serializers.ModelSerializer):  # todo: OK
+class ObreroSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Obrero
@@ -48,7 +48,7 @@ class ObreroSerializer(serializers.ModelSerializer):  # todo: OK
         read_only_fields = ('id',)
 
 
-class CeldaSerializer(serializers.ModelSerializer):  # todo: OK
+class CeldaSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Celda
@@ -58,7 +58,7 @@ class CeldaSerializer(serializers.ModelSerializer):  # todo: OK
         extra_kwargs = {'parcela': {'required': True}, 'paquete_semillas': {'required': True}}
 
 
-class ParcelaSerializer(serializers.ModelSerializer):  # todo: OK
+class ParcelaSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Parcela
@@ -68,7 +68,7 @@ class ParcelaSerializer(serializers.ModelSerializer):  # todo: OK
         extra_kwargs = {'agricultor': {'required': False}}
 
 
-class PaqueteSemillasSerializer(serializers.ModelSerializer):  # todo: OK
+class PaqueteSemillasSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = PaqueteSemillas
@@ -79,7 +79,7 @@ class PaqueteSemillasSerializer(serializers.ModelSerializer):  # todo: OK
         extra_kwargs = {'agricultor': {'required': False}}
 
 
-class AgricultorSerializer(serializers.ModelSerializer):  # todo: OK
+class AgricultorSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Agricultor
@@ -97,7 +97,7 @@ class RutaSerializer(serializers.ModelSerializer):
         read_only_fields = ('id',)
 
 
-class TransporteSerializer(serializers.ModelSerializer):  # todo: OK
+class TransporteSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Transporte
